@@ -18,16 +18,17 @@ class Hanoi():
     def getBoardGraph(self, index):
         maxLength = self.maxNumber * 2 + 3
 
-        air = '.'
+        air = ' '
+        block = '-'
         if index == 0:
             return air * maxLength
 
-        air = air * (maxLength//2 - index + 1)
+        airs = air * (maxLength//2 - index + 1)
         strIndex = str(index)
-        leftBoardBlocks = '■' * (index - 1 - len(strIndex) // 2)
-        rightBoardBlocks = '■' * (index - 1 - (len(strIndex)-1) // 2)
+        leftBoardBlocks = block * (index - 1 - len(strIndex) // 2)
+        rightBoardBlocks = block * (index - 1 - (len(strIndex)-1) // 2)
 
-        board = f'{air}{leftBoardBlocks}{str(index)}{rightBoardBlocks}{air}'
+        board = f'{airs}{leftBoardBlocks}{str(index)}{rightBoardBlocks}{airs}'
 
         return board
     
